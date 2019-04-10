@@ -199,10 +199,22 @@ function(PYSIDE_ADD_GENERATOR_TARGET
         set(gen_include_paths_arg "${gen_include_paths_arg}${gen_pathsep}${itm}")
     endforeach(itm ${gen_include_paths})
 
+    #
+    # On macOS, Qt install uses frameworks, we have to use
+    # --framework-include-paths=
+    # or else shiboken  + clang can't find the headers
+    #
+
+    set(gen_framework_include_paths "")
+    if(APPLE)
+        set(gen_framework_include_paths "--framework-include-paths=${QT_LIBRARY_DIR}")
+    endif()
+
     add_custom_command(OUTPUT ${${gen_sources}}
         COMMAND ${CMAKE_COMMAND} -E env CLANG_INSTALL_DIR=${VISIT_LLVM_DIR}
         ${SHIBOKEN_EXECUTABLE} ${PYSIDE_GENERATOR_EXTRA_FLAGS}
         ${gen_global}
+        ${gen_framework_include_paths}
         --include-paths=${gen_include_paths_arg}
         --typesystem-paths=${PYSIDE_TYPESYSTEMS}
         --output-directory=${CMAKE_CURRENT_BINARY_DIR}

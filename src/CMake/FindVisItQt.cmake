@@ -121,6 +121,13 @@ foreach(mod ${visit_qt_modules})
 endforeach()
 
 
+# Even though we have nice per-component targets, some downstream deps need 
+# more basic info about the qt install layout.
+# In this case, pyside + shiboken need to know where frameworks are installed
+# to so they can pass the correct compiler flags to clang during shiboken
+# generation
+set(QT_LIBRARY_DIR ${VISIT_QT_DIR}/lib)
+
 set(QT_QTUITOOLS_LIBRARY ${Qt5UiTools_LIBRARIES})
 set(QT_QTOPENGL_LIBRARY ${Qt5OpenGL_LIBRARIES})
 
