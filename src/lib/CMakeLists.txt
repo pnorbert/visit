@@ -166,34 +166,57 @@ endif(VISIT_PYTHON_FILTERS)
 
 if(VISIT_PYTHON_SCRIPTING AND (TARGET PySide2::pyside2 AND TARGET Shiboken2::shiboken2 AND TARGET Shiboken2::libshiboken))
     message(STATUS "Adding PySide to lib/site-packages/")
+    # may want to check if shibokenlib_location is found, may need to use IMPORTED_LOCATION_DEBUG
+    get_target_property(shibokenlib_location Shiboken2::libshiboken IMPORTED_LOCATION_RELEASE)
+    # may want to check if shibokenlib_soname is found, may need to use IMPORTED_SONAME_DEBUG
+    get_target_property(shibokenlib_soname   Shiboken2::libshiboken IMPORTED_SONAME_RELEASE)
+    execute_process(COMMAND ${CMAKE_COMMAND} -E remove -f
+                    ${CMAKE_CURRENT_BINARY_DIR}/site-packages/${shibokenlib_soname}
+                    RESULT_VARIABLE SHIBOKEN_LIB_SYM_RM)
+    execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink
+                    ${shibokenlib_location}
+                    ${CMAKE_CURRENT_BINARY_DIR}/site-packages/${shibokenlib_soname}
+                    RESULT_VARIABLE SHIBOKEN_LIB_SYM_CREATE)
+    if(NOT "${SHIBOKEN_LIB_SYM_CREATE}" STREQUAL "0")
+        message(WARNING "Failed to create Shiboken lib symlink in lib/site-packages/ for PySide2")
+    endif()
+    unset(shibokenlib_location)
+    unset(shibokenlib_soname)
+    unset(SHOBKEN_LIB_SYM_RM)
+    unset(SHOBKEN_LIB_SYM_CREATE)
     if(NOT WIN32)
-        file(GLOB PYSIDE_MODULE_ITEMS "${PYSIDE_PYTHONPATH}/*")
-        foreach(ITM ${PYSIDE_MODULE_ITEMS})
-            get_filename_component(ITM_ABS ${ITM} ABSOLUTE)
-            get_filename_component(ITM_BASE ${ITM_ABS} NAME)
-            message(STATUS "Symlinking ${ITM_ABS} to ${CMAKE_CURRENT_BINARY_DIR}/site-packages/${ITM_BASE}")
-            execute_process(COMMAND ${CMAKE_COMMAND} -E remove -f
-                          ${CMAKE_CURRENT_BINARY_DIR}/site-packages/${ITM_BASE}
-                          RESULT_VARIABLE PYSIDE_MODULE_SYM_RM)
-            execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink
-                          ${ITM_ABS}
-                          ${CMAKE_CURRENT_BINARY_DIR}/site-packages/${ITM_BASE}
-                          RESULT_VARIABLE PYSIDE_MODULE_SYM_CREATE)
-            if(NOT "${PYSIDE_MODULE_SYM_CREATE}" STREQUAL "0")
-                message(WARNING "Failed to create PySide module symlink in lib/site-packages/ for ${ITM_ABS}")
-            endif()
-        endforeach()
-        unset(PYSIDE_MODULE_ITEMS)
-        unset(ITM_ABS)
-        unset(ITM_BASE)
+        message(STATUS "Symlinking PySide2 to ${CMAKE_CURRENT_BINARY_DIR}/site-packages")
+        execute_process(COMMAND ${CMAKE_COMMAND} -E remove -f
+                      ${CMAKE_CURRENT_BINARY_DIR}/site-packages/PySide2
+                      RESULT_VARIABLE PYSIDE_MODULE_SYM_RM)
+        execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink
+                      ${PYSIDE_PYTHONPATH} 
+                      ${CMAKE_CURRENT_BINARY_DIR}/site-packages/PySide2
+                      RESULT_VARIABLE PYSIDE_MODULE_SYM_CREATE)
+        if(NOT "${PYSIDE_MODULE_SYM_CREATE}" STREQUAL "0")
+            message(WARNING "Failed to create PySide module symlink in lib/site-packages/ for PySide2")
+        endif()
+        unset(PYSIDE_MODULE_SYM_RM)
         unset(PYSIDE_MODULE_SYMCREATE)
+        message(STATUS "Symlinking shiboken2 to ${CMAKE_CURRENT_BINARY_DIR}/site-packages")
+        execute_process(COMMAND ${CMAKE_COMMAND} -E remove -f
+                      ${CMAKE_CURRENT_BINARY_DIR}/site-packages/shiboken2
+                      RESULT_VARIABLE SHIBOKEN_MODULE_SYM_RM)
+        execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink
+                      ${SHIBOKEN_PYTHON_MODULE_DIR} 
+                      ${CMAKE_CURRENT_BINARY_DIR}/site-packages/shiboken2
+                      RESULT_VARIABLE SHIBOKEN_MODULE_SYM_CREATE)
+        if(NOT "${SHIBOKEN_MODULE_SYM_CREATE}" STREQUAL "0")
+            message(WARNING "Failed to create shiboken module symlink in lib/site-packages/ for PySide2")
+        endif()
+        unset(SHIBOKEN_MODULE_SYM_RM)
+        unset(SHIBOKEN_MODULE_SYMCREATE)
     else()
-        set(pysidename "PySide2")
         add_custom_target(pyside_modules ALL
             COMMAND ${CMAKE_COMMAND} -E copy_directory
-                    ${PYSIDE_PYTHONPATH}/${pysidename}
-                    ${VISIT_LIBRARY_DIR}/site-packages/${pysidename}
-            COMMENT "Copying ${PYSIDE_PYTHONPATH}/${pysidename} to ${VISIT_LIBRARY_DIR}/site-packages/${pysidename}"
+                    ${PYSIDE_PYTHONPATH}/PySide2
+                    ${VISIT_LIBRARY_DIR}/site-packages/PySide2
+            COMMENT "Copying ${PYSIDE_PYTHONPATH}/PySide2 to ${VISIT_LIBRARY_DIR}/site-packages/PySide2"
         )
         if(VISIT_NO_ALLBUILD)
             add_dependencies(visit_special_builds pyside_modules)

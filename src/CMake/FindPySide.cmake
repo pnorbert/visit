@@ -65,10 +65,6 @@
 include(${VISIT_SOURCE_DIR}/CMake/SetUpThirdParty.cmake)
 
 
-
-
-
-
 if(VISIT_PYSIDE_DIR)
     #option(PYSIDE_LIBNAMES_AFFIX_V "Whether PySide and Shiboken base names end with v" OFF)
 
@@ -163,7 +159,7 @@ if(TARGET PySide2::pyside2 AND TARGET Shiboken2::libshiboken AND TARGET Shiboken
     unset(PYSIDE_MODULE_SRC)
     unset(PYSIDE_MODULE_INSTALLED_DIR)
     unset(pysidelibs)
-endif(PySide_FOUND)
+endif()
 
 
 #****************************************************************************
