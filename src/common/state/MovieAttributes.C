@@ -1483,3 +1483,4 @@ MovieAttributes::ValidateFormats(DataNode *searchNode)
     SET_MOVIE_DATA(scaleNode, scalesVec, SetDoubleVector, "scales");
     SET_MOVIE_DATA(csNode, useCurrentSizeVec, SetUnsignedCharVector, "useCurrentSize");
 }
+

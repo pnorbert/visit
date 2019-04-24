@@ -1724,3 +1724,4 @@ View3DAttributes::ResetView(const double *bbox)
     // Copy the object into this.
     *this = view3D;
 }
+
