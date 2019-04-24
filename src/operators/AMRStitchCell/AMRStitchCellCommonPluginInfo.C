@@ -77,7 +77,7 @@ AMRStitchCellCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 AMRStitchCellCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

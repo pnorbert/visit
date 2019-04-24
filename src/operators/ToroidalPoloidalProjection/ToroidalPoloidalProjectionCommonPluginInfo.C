@@ -77,7 +77,7 @@ ToroidalPoloidalProjectionCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 ToroidalPoloidalProjectionCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

@@ -77,7 +77,7 @@ CartographicProjectionCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 CartographicProjectionCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

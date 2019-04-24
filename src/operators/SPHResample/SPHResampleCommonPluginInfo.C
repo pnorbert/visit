@@ -77,7 +77,7 @@ SPHResampleCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 SPHResampleCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

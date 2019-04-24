@@ -77,7 +77,7 @@ ZoneDumpCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 ZoneDumpCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

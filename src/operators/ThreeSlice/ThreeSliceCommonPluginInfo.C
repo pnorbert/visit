@@ -77,7 +77,7 @@ ThreeSliceCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 ThreeSliceCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

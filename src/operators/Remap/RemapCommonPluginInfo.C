@@ -77,7 +77,7 @@ RemapCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 RemapCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

@@ -77,7 +77,7 @@ IndexSelectCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 IndexSelectCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

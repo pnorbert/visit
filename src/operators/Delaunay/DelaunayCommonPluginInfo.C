@@ -77,7 +77,7 @@ DelaunayCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 DelaunayCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

@@ -77,7 +77,7 @@ PersistentParticlesCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 PersistentParticlesCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

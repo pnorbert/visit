@@ -77,7 +77,7 @@ TransformCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 TransformCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

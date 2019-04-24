@@ -77,7 +77,7 @@ DisplaceCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 DisplaceCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

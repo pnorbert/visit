@@ -77,7 +77,7 @@ OnionPeelCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 OnionPeelCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

@@ -77,7 +77,7 @@ InverseGhostZoneCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 InverseGhostZoneCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

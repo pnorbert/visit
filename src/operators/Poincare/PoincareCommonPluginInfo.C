@@ -46,17 +46,7 @@
 #include <Expression.h>
 #include <ExpressionList.h>
 #include <avtDatabaseMetaData.h>
-#include <avtMeshMetaData.h>
-#include <avtSubsetsMetaData.h>
-#include <avtScalarMetaData.h>
 #include <avtVectorMetaData.h>
-#include <avtTensorMetaData.h>
-#include <avtSymmetricTensorMetaData.h>
-#include <avtArrayMetaData.h>
-#include <avtMaterialMetaData.h>
-#include <avtSpeciesMetaData.h>
-#include <avtCurveMetaData.h>
-#include <avtLabelMetaData.h>
 
 // ****************************************************************************
 //  Method: PoincareCommonPluginInfo::AllocAttributes
@@ -92,7 +82,7 @@ PoincareCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 PoincareCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

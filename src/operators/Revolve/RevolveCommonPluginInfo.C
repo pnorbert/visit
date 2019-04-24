@@ -77,7 +77,7 @@ RevolveCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 RevolveCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

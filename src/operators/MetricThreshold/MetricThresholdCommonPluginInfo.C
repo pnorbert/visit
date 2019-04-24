@@ -77,7 +77,7 @@ MetricThresholdCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 MetricThresholdCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

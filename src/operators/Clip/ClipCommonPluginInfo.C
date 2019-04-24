@@ -77,7 +77,7 @@ ClipCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 ClipCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

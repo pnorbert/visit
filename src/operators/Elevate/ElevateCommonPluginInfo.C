@@ -77,7 +77,7 @@ ElevateCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 ElevateCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

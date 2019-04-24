@@ -77,7 +77,7 @@ RemoveCellsCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 RemoveCellsCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

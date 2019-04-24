@@ -77,7 +77,7 @@ IsosurfaceCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 IsosurfaceCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

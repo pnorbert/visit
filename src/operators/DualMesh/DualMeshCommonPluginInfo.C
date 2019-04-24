@@ -77,7 +77,7 @@ DualMeshCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 DualMeshCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

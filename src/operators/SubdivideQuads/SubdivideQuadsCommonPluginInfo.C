@@ -77,7 +77,7 @@ SubdivideQuadsCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 SubdivideQuadsCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

@@ -77,7 +77,7 @@ LineSurfaceCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 LineSurfaceCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

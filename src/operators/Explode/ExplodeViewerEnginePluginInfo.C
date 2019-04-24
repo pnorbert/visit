@@ -43,8 +43,6 @@
 #include <ExplodePluginInfo.h>
 #include <ExplodeAttributes.h>
 
-#include <avtPlotMetaData.h>
-
 //
 // Storage for static data elements.
 //
@@ -165,10 +163,10 @@ ExplodeViewerEnginePluginInfo::GetClientAtts(AttributeSubject *atts)
 //  Modifications:
 //
 //      Alister Maguire, Wed Nov  8 10:12:34 PST 2017
-//      Added retrieval of boundary names. 
+//      Added retrieval of boundary names.
 //
 //      Alister Maguire, Wed Jan 17 15:28:46 PST 2018
-//      Moved most of the method to PrivateSetOperatorAtts(). 
+//      Moved most of the method to PrivateSetOperatorAtts().
 //
 // ****************************************************************************
 
@@ -199,12 +197,12 @@ ExplodeViewerEnginePluginInfo::InitializeOperatorAtts(AttributeSubject *atts,
 //
 //  Modifications:
 //      Alister Maguire, Wed Jan 17 15:28:46 PST 2018
-//      Added a call to PrivateSetOperatorAtts(). 
+//      Added a call to PrivateSetOperatorAtts().
 //
 // ****************************************************************************
 
 void
-ExplodeViewerEnginePluginInfo::UpdateOperatorAtts(AttributeSubject *atts, 
+ExplodeViewerEnginePluginInfo::UpdateOperatorAtts(AttributeSubject *atts,
     const avtPlotMetaData &plot)
 {
     cerr << "UPDATING OPERATOR ATTS" << endl;
@@ -232,13 +230,12 @@ ExplodeViewerEnginePluginInfo::GetMenuName() const
     return "Explode";
 }
 
-
 // ****************************************************************************
 //  Method: ExplodeViewerEnginePluginInfo::PrivateSetOperatorAtts
 //
 //  Purpose:
-//      Retrieve the boundary (material) names and set them within the i
-//      operator attributes. 
+//      Retrieve the boundary (material) names and set them within the
+//      operator attributes.
 //
 //  Programmer: Alister Maguire
 //  Creation:   Wed Jan 17 15:28:46 PST 2018
@@ -246,7 +243,7 @@ ExplodeViewerEnginePluginInfo::GetMenuName() const
 //  Modifications:
 //
 //      Alister Maguire, Tue Sep 18 14:57:03 PDT 2018
-//      Added the ability to handle multiple types of subsets. 
+//      Added the ability to handle multiple types of subsets.
 //
 // ****************************************************************************
 
@@ -254,9 +251,10 @@ ExplodeViewerEnginePluginInfo::GetMenuName() const
 
 #include <DebugStream.h>
 #include <InvalidVariableException.h>
+#include <avtPlotMetaData.h>
 
 void
-ExplodeViewerEnginePluginInfo::PrivateSetOperatorAtts(AttributeSubject *atts, 
+ExplodeViewerEnginePluginInfo::PrivateSetOperatorAtts(AttributeSubject *atts,
     const avtPlotMetaData &plot)
 {
     ExplodeAttributes *explodeAtts = (ExplodeAttributes *)atts;
@@ -276,13 +274,13 @@ ExplodeViewerEnginePluginInfo::PrivateSetOperatorAtts(AttributeSubject *atts,
     stringVector::const_iterator pos;
     char temp[512];
 
-    // 
-    // Create subset names, based on Subset Type 
-    // 
+    //
+    // Create subset names, based on Subset Type
+    //
     avtSubsetType subT = md->DetermineSubsetType(varName);
     switch (subT)
     {
-        case AVT_DOMAIN_SUBSET : 
+        case AVT_DOMAIN_SUBSET:
         {
             debug5 << "Exploding a domain mesh subset." << endl; 
             explodeAtts->SetSubsetType(ExplodeAttributes::Domain);
@@ -290,7 +288,7 @@ ExplodeViewerEnginePluginInfo::PrivateSetOperatorAtts(AttributeSubject *atts,
             if (mesh->blockNames.empty())
             {
                 for (int i = 0; i < mesh->numBlocks; i++)
-                { 
+                {
                     sprintf(temp, "%d", i+mesh->blockOrigin);
                     subsetNames.push_back(temp);
                 }
@@ -306,12 +304,12 @@ ExplodeViewerEnginePluginInfo::PrivateSetOperatorAtts(AttributeSubject *atts,
         }
         break;
 
-        case AVT_GROUP_SUBSET :
+        case AVT_GROUP_SUBSET:
         {
             debug5 << "Exploding a group mesh subset." << endl; 
             explodeAtts->SetSubsetType(ExplodeAttributes::Group);
             defaultAtts->SetSubsetType(ExplodeAttributes::Group);
-            
+
             std::set<int>    groupSet;
             std::vector<int> gIDS;
 
@@ -353,9 +351,9 @@ ExplodeViewerEnginePluginInfo::PrivateSetOperatorAtts(AttributeSubject *atts,
         }
         break;
 
-        case AVT_ENUMSCALAR_SUBSET :
+        case AVT_ENUMSCALAR_SUBSET:
         {
-            debug5 << "Exploding an enumerated scalar subset." << endl; 
+            debug5 << "Exploding an enumerated scalar subset." << endl;
             explodeAtts->SetSubsetType(ExplodeAttributes::EnumScalar);
             defaultAtts->SetSubsetType(ExplodeAttributes::EnumScalar);
             const avtScalarMetaData *smd = md->GetScalar(varName);
@@ -370,7 +368,7 @@ ExplodeViewerEnginePluginInfo::PrivateSetOperatorAtts(AttributeSubject *atts,
         }
         break;
 
-        case AVT_MATERIAL_SUBSET: 
+        case AVT_MATERIAL_SUBSET:
         // Fall through to default
 
         default:
@@ -378,8 +376,8 @@ ExplodeViewerEnginePluginInfo::PrivateSetOperatorAtts(AttributeSubject *atts,
             //
             // By default, we explode materials.
             //
-            debug5 << "Exploding a materials." << endl; 
-            int numMaterials = md->GetNumMaterials();  
+            debug5 << "Exploding a materials." << endl;
+            int numMaterials = md->GetNumMaterials();
             explodeAtts->SetSubsetType(ExplodeAttributes::Material);
             defaultAtts->SetSubsetType(ExplodeAttributes::Material);
 
@@ -393,7 +391,7 @@ ExplodeViewerEnginePluginInfo::PrivateSetOperatorAtts(AttributeSubject *atts,
                     {
                         if ( !(*pos).empty() )
                         {
-                            subsetNames.push_back(*pos); 
+                            subsetNames.push_back(*pos);
                         }
                     }
                 }
@@ -406,3 +404,4 @@ ExplodeViewerEnginePluginInfo::PrivateSetOperatorAtts(AttributeSubject *atts,
     explodeAtts->SetBoundaryNames(subsetNames);
     defaultAtts->SetBoundaryNames(subsetNames);
 }
+

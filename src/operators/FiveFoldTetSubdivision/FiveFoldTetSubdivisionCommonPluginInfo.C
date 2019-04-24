@@ -77,7 +77,7 @@ FiveFoldTetSubdivisionCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 FiveFoldTetSubdivisionCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

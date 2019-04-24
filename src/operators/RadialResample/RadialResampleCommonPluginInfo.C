@@ -77,7 +77,7 @@ RadialResampleCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 RadialResampleCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

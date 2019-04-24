@@ -77,7 +77,7 @@ MergeCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 MergeCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

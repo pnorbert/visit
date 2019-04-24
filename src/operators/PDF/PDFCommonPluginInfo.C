@@ -77,7 +77,7 @@ PDFCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 PDFCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

@@ -77,7 +77,7 @@ ResampleCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 ResampleCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

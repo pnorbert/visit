@@ -77,7 +77,7 @@ FFTCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 FFTCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

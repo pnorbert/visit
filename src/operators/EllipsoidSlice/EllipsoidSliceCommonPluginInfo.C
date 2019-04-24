@@ -77,7 +77,7 @@ EllipsoidSliceCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 EllipsoidSliceCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

@@ -77,7 +77,7 @@ BoxCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 BoxCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

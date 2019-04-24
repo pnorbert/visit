@@ -77,7 +77,7 @@ TriangulateRegularPointsCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 TriangulateRegularPointsCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

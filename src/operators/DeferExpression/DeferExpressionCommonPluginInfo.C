@@ -77,7 +77,7 @@ DeferExpressionCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 DeferExpressionCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

@@ -233,6 +233,11 @@
 //   Brad Whitlock, Wed Sep 17 09:03:11 PDT 2014
 //   Added common  base class for viewer and engine plot/operator plugins.
 //
+//   Kathleen Biagas, Wed Apr 24 09:42:39 PDT 2019
+//   Made some if-if-if statements within for loops if-elseif-elseif.
+//   Made includes of avtXXXMetaData for operators that create expressions
+//   dependent upon exprInType values.
+//
 // ****************************************************************************
 
 class InfoGeneratorPlugin : public Plugin
@@ -1296,18 +1301,33 @@ class InfoGeneratorPlugin : public Plugin
                 c << "#include <Expression.h>" << endl;
                 c << "#include <ExpressionList.h>" << endl;
                 c << "#include <avtDatabaseMetaData.h>" << endl;
-                c << "#include <avtMeshMetaData.h>" << endl;
-                c << "#include <avtSubsetsMetaData.h>" << endl;
-                c << "#include <avtScalarMetaData.h>" << endl;
-                c << "#include <avtVectorMetaData.h>" << endl;
-                c << "#include <avtTensorMetaData.h>" << endl;
-                c << "#include <avtSymmetricTensorMetaData.h>" << endl;
-                c << "#include <avtArrayMetaData.h>" << endl;
-                c << "#include <avtMaterialMetaData.h>" << endl;
-                c << "#include <avtSpeciesMetaData.h>" << endl;
-                c << "#include <avtCurveMetaData.h>" << endl;
-                c << "#include <avtLabelMetaData.h>" << endl;
 
+                std::vector<QString> intypes = SplitValues(exprInType);
+                for (size_t i = 0 ; i < intypes.size() ; i++)
+                {
+                    if (intypes[i] == "mesh")
+                        c << "#include <avtMeshMetaData.h>" << endl;
+                    else if (intypes[i] == "scalar")
+                        c << "#include <avtScalarMetaData.h>" << endl;
+                    else if (intypes[i] == "vector")
+                        c << "#include <avtVectorMetaData.h>" << endl;
+                    else if (intypes[i] == "material")
+                        c << "#include <avtMaterialMetaData.h>" << endl;
+                    else if (intypes[i] == "subset")
+                        c << "#include <avtSubsetsMetaData.h>" << endl;
+                    else if (intypes[i] == "species")
+                        c << "#include <avtSpeciesMetaData.h>" << endl;
+                    else if (intypes[i] == "curve")
+                        c << "#include <avtCurveMetaData.h>" << endl;
+                    else if (intypes[i] == "tensor")
+                        c << "#include <avtTensorMetaData.h>" << endl;
+                    else if (intypes[i] == "symmetrictensor")
+                        c << "#include <avtSymmetricTensorMetaData.h>" << endl;
+                    else if (intypes[i] == "label")
+                        c << "#include <avtLabelMetaData.h>" << endl;
+                    else if (intypes[i] == "array")
+                        c << "#include <avtArrayMetaData.h>" << endl;
+                }
                 c << endl;
             }
             QString funcName = name + "CommonPluginInfo::AllocAttributes";
@@ -1351,7 +1371,7 @@ class InfoGeneratorPlugin : public Plugin
                 c << "//" << endl;
                 c << "// ****************************************************************************" << endl;
                 c << endl;
-                c << "void " << endl;
+                c << "void" << endl;
                 c << funcName<<"(AttributeSubject *to," << endl;
                 c << "    AttributeSubject *from)" << endl;
                 c << "{" << endl;
@@ -1384,25 +1404,25 @@ class InfoGeneratorPlugin : public Plugin
                 {
                     if (intypes[i] == "mesh")
                         doMesh = true;
-                    if (intypes[i] == "scalar")
+                    else if (intypes[i] == "scalar")
                         doScalar = true;
-                    if (intypes[i] == "vector")
+                    else if (intypes[i] == "vector")
                         doVector = true;
-                    if (intypes[i] == "material")
+                    else if (intypes[i] == "material")
                         doMaterial = true;
-                    if (intypes[i] == "subset")
+                    else if (intypes[i] == "subset")
                         doSubset = true;
-                    if (intypes[i] == "species")
+                    else if (intypes[i] == "species")
                         doSpecies = true;
-                    if (intypes[i] == "curve")
+                    else if (intypes[i] == "curve")
                         doCurve = true;
-                    if (intypes[i] == "tensor")
+                    else if (intypes[i] == "tensor")
                         doTensor = true;
-                    if (intypes[i] == "symmetrictensor")
+                    else if (intypes[i] == "symmetrictensor")
                         doSymmTensor = true;
-                    if (intypes[i] == "label")
+                    else if (intypes[i] == "label")
                         doLabel = true;
-                    if (intypes[i] == "array")
+                    else if (intypes[i] == "array")
                         doArray = true;
                 }
                 std::vector<QString> outtypes = SplitValues(exprOutType);
@@ -1412,41 +1432,41 @@ class InfoGeneratorPlugin : public Plugin
                 {
                     if (outtypes[i] == "mesh")
                         cerr << "Mesh expressions not currently supported." << endl;
-                    if (outtypes[i] == "scalar")
+                    else if (outtypes[i] == "scalar")
                     {
                         if (!haveScalar)
                             outExprTypes.push_back("ScalarMeshVar");
                         haveScalar = true;
                     }
-                    if (outtypes[i] == "vector")
+                    else if (outtypes[i] == "vector")
                         outExprTypes.push_back("VectorMeshVar");
-                    if (outtypes[i] == "material")
+                    else if (outtypes[i] == "material")
                         outExprTypes.push_back("Material");
-                    if (outtypes[i] == "subset")
+                    else if (outtypes[i] == "subset")
                         cerr << "Subset expressions not currently supported." << endl;
-                    if (outtypes[i] == "species")
+                    else if (outtypes[i] == "species")
                         outExprTypes.push_back("Species");
-                    if (outtypes[i] == "curve")
+                    else if (outtypes[i] == "curve")
                         outExprTypes.push_back("CurveMeshVar");
-                    if (outtypes[i] == "tensor")
+                    else if (outtypes[i] == "tensor")
                     {
                         if (!haveTensor)
                             outExprTypes.push_back("TensorMeshVar");
                         haveTensor = true;
                     }
-                    if (outtypes[i] == "symmetrictensor")
+                    else if (outtypes[i] == "symmetrictensor")
                     {
                         if (!haveTensor)
                             outExprTypes.push_back("TensorMeshVar");
                         haveTensor = true;
                     }
-                    if (outtypes[i] == "label")
+                    else if (outtypes[i] == "label")
                     {
                         if (!haveScalar)
                             outExprTypes.push_back("ScalarMeshVar");
                         haveScalar = true;
                     }
-                    if (outtypes[i] == "array")
+                    else if (outtypes[i] == "array")
                         outExprTypes.push_back("ArrayMeshVar");
                 }
                 c << "    int i;" << endl;

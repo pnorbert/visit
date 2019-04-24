@@ -77,7 +77,7 @@ ExtrudeCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 ExtrudeCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

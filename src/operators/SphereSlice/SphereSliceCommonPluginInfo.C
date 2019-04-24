@@ -77,7 +77,7 @@ SphereSliceCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 SphereSliceCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

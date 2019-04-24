@@ -76,6 +76,12 @@
       </Function>
       <Function name="PyExplodeAttributes_SetDefaults" user="false" member="true">
       </Function>
+      <Function name="ExplodeViewerEnginePluginInfo::InitializeOperatorAtts" user="false" member="true">
+      </Function>
+      <Function name="ExplodeViewerEnginePluginInfo::UpdateOperatorAtts" user="false" member="true">
+      </Function>
+      <Function name="ExplodeViewerEnginePluginInfo::PrivateSetOperatorAtts" user="true" member="true">
+      </Function>
       <Include file="header" quoted="false">
         MapNode.h
       </Include>

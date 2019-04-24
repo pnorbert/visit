@@ -77,7 +77,7 @@ StaggerCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 StaggerCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

@@ -77,7 +77,7 @@ BoundaryOpCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 BoundaryOpCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

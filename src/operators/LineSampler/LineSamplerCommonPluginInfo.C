@@ -77,7 +77,7 @@ LineSamplerCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 LineSamplerCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

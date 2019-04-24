@@ -77,7 +77,7 @@ TubeCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 TubeCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

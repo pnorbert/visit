@@ -77,7 +77,7 @@ SmoothCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 SmoothCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

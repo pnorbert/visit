@@ -77,7 +77,7 @@ IsovolumeCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 IsovolumeCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

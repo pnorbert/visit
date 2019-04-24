@@ -77,7 +77,7 @@ SliceCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 SliceCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

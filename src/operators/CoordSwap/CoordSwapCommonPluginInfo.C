@@ -77,7 +77,7 @@ CoordSwapCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 CoordSwapCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

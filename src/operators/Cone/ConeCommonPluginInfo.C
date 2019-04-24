@@ -77,7 +77,7 @@ ConeCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 ConeCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

@@ -77,7 +77,7 @@ DecimateCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 DecimateCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

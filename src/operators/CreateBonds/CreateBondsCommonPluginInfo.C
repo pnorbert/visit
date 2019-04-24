@@ -77,7 +77,7 @@ CreateBondsCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 CreateBondsCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

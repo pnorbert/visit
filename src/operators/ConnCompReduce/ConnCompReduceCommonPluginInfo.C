@@ -77,7 +77,7 @@ ConnCompReduceCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 ConnCompReduceCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

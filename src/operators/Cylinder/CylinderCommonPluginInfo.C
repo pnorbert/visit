@@ -77,7 +77,7 @@ CylinderCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 CylinderCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

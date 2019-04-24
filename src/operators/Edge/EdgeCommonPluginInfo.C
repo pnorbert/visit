@@ -77,7 +77,7 @@ EdgeCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 EdgeCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

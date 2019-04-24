@@ -77,7 +77,7 @@ SurfCompPrepCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 SurfCompPrepCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

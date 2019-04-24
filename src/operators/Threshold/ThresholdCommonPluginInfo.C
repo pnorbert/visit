@@ -77,7 +77,7 @@ ThresholdCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 ThresholdCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

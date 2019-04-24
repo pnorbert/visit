@@ -77,7 +77,7 @@ ProjectCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 ProjectCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

@@ -77,7 +77,7 @@ ReflectCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 ReflectCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

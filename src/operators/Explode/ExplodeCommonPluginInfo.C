@@ -77,7 +77,7 @@ ExplodeCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 ExplodeCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

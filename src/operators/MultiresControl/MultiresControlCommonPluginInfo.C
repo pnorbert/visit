@@ -77,7 +77,7 @@ MultiresControlCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 MultiresControlCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

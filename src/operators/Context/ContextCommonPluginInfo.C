@@ -77,7 +77,7 @@ ContextCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 ContextCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {
