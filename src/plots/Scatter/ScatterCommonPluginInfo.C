@@ -77,7 +77,7 @@ ScatterCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 ScatterCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

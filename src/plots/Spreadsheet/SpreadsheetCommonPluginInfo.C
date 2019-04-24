@@ -77,7 +77,7 @@ SpreadsheetCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 SpreadsheetCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

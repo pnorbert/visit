@@ -77,7 +77,7 @@ SubsetCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 SubsetCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

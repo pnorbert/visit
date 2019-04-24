@@ -77,7 +77,7 @@ MeshCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 MeshCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

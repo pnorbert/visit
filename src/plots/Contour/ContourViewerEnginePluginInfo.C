@@ -226,7 +226,7 @@ ContourViewerEnginePluginInfo::GetMenuName() const
 // ****************************************************************************
 // Method: ContourViewerEnginePluginInfo::InitializeDefaultPalette
 //
-// Purpose: 
+// Purpose:
 //   Initializes the default palette in the contour attributes using the
 //   default discrete color table.
 //

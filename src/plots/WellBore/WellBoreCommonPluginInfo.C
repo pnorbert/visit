@@ -77,7 +77,7 @@ WellBoreCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 WellBoreCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

@@ -77,7 +77,7 @@ TopologyCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 TopologyCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

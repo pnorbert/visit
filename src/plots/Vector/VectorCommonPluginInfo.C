@@ -77,7 +77,7 @@ VectorCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 VectorCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

@@ -77,7 +77,7 @@ LabelCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 LabelCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

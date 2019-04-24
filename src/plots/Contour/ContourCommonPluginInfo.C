@@ -77,7 +77,7 @@ ContourCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 ContourCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

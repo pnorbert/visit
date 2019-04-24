@@ -77,7 +77,7 @@ MoleculeCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 MoleculeCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

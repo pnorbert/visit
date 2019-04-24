@@ -77,7 +77,7 @@ CurveCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 CurveCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

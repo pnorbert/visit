@@ -77,7 +77,7 @@ ParallelCoordinatesCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 ParallelCoordinatesCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

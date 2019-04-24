@@ -77,7 +77,7 @@ FilledBoundaryCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 FilledBoundaryCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

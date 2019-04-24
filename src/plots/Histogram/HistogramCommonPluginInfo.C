@@ -77,7 +77,7 @@ HistogramCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 HistogramCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

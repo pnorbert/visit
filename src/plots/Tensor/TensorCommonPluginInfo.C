@@ -77,7 +77,7 @@ TensorCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 TensorCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

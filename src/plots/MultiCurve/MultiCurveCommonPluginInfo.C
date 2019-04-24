@@ -77,7 +77,7 @@ MultiCurveCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 MultiCurveCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

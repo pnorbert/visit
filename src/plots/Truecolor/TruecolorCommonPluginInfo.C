@@ -77,7 +77,7 @@ TruecolorCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 TruecolorCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

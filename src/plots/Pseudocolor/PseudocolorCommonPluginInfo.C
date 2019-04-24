@@ -77,7 +77,7 @@ PseudocolorCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 PseudocolorCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {

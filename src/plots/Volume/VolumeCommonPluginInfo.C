@@ -77,7 +77,7 @@ VolumeCommonPluginInfo::AllocAttributes()
 //
 // ****************************************************************************
 
-void 
+void
 VolumeCommonPluginInfo::CopyAttributes(AttributeSubject *to,
     AttributeSubject *from)
 {
