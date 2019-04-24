@@ -1705,14 +1705,14 @@ ExplodeAttributes::FieldsEqual(int index_, const AttributeGroup *rhs) const
 // ****************************************************************************
 // Method: ExplodeAttributes::AttributesMatch
 //
-// Purpose: 
-//     Compare two attributes, excluding their explosions list. 
+// Purpose:
+//     Compare two attributes, excluding their explosions list.
 //
 // Programmer: Alister Maguire
 // Creation:   Tue Feb 20 11:06:54 PST 2018
 //
 // Modifications:
-//   
+//
 // ****************************************************************************
 
 bool
