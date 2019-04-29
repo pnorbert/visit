@@ -53,7 +53,6 @@
             <lib name="tbb"/>
             <lib name="tcmalloc"/>
             <lib name="uintah"/>
-            <lib name="visus"/>
             <lib name="vtkm"/>
             <lib name="vtkh"/>
             <lib name="xdmf"/>
@@ -102,7 +101,6 @@
             <lib name="silo"/>
             <lib name="szip"/>
             <lib name="tbb"/>
-            <lib name="visus"/>
             <lib name="vtkm"/>
             <lib name="vtkh"/>
             <lib name="xdmf"/>
@@ -143,7 +141,6 @@
             <lib name="silo"/>
             <lib name="szip"/>
             <lib name="uintah"/>
-            <lib name="visus"/>
             <lib name="xdmf"/>
             <lib name="zlib"/> <!-- required by nektarpp -->
         </group>
@@ -171,7 +168,6 @@
             <lib name="pidx"/>
             <lib name="silo"/>
             <lib name="szip"/>
-            <lib name="visus"/>
             <lib name="uintah"/>
             <lib name="xdmf"/>
             <lib name="zlib"/> <!-- required by nektarpp -->
@@ -211,7 +207,6 @@
         <required>
             <lib name="cmake"/>
             <lib name="python"/>
-            <lib name="R"/>
             <lib name="vtk"/>
             <lib name="qt"/>
             <lib name="qwt"/>
@@ -240,7 +235,6 @@
         <group name="required" comment="All required libraries" enabled="yes">
             <lib name="cmake"/>
             <lib name="python"/>
-            <lib name="R"/>
             <lib name="vtk"/>
             <lib name="qt"/>
             <lib name="qwt"/>
